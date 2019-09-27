@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="scripts/registration/registration.css">
+</head>
+<body>
+    <div id="ac-registration-app" class="registration-wrapper">
+        <div class="ac-registration-form"> 
+          <div class="ac-form-wrapper">
+            <div class="imgcontainer">
+              <img src="assets/logo.png" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+                <div v-show="!showSecondTab">
+                    <div class="ac-registration-form-row">
+                        <span class="ac-input-icon">
+                            <h4>User Information</h4>
+                        </span>
+                    </div>
+                    <div class="ac-registration-form-row">
+                        <span class="ac-input-icon">
+                            <input type="text" placeholder="User Name" name="uname" v-model="newUser.username" required>
+                            <i class="fa fa-user"></i>
+                        </span>
+                    </div>
+                    <div class="ac-registration-form-row">
+                        <span class="ac-input-icon">
+                            <input type="password" placeholder="Password" name="psw" v-model="newUser.password" required>
+                            <i class="fa fa-lock"></i>
+                        </span>
+                        <span v-if="error.password" class="error-message"> {{ error.password.msg }} </span>
+                    </div>
+                    <div class="ac-registration-form-row">
+                        <span class="ac-input-icon">
+                            <input type="email" placeholder="Email" name="email" v-model="newUser.email" required>
+                            <i class="fa fa-envelope"></i>
+                        </span>
+                        <span v-if="error.email" class="error-message"> {{ error.email.msg }} </span>
+                        </div>
+
+                        <div class="ac-registration-form-row">
+                            <span class="ac-input-icon">
+                                <input type="number" placeholder="Phone Number" name="phone" v-model="newUser.phone" required>
+                                <i class="fa fa-phone"></i>
+                            </span>
+                        </div>
+
+                        <div class="ac-registration-form-row">
+                            <span class="ac-input-icon">
+                                <input type="text" placeholder="First Name" name="fname" v-model="newUser.firstName" required>
+                                <i class="fa fa-user"></i>
+                            </span>
+                        </div>
+
+                        <div class="ac-registration-form-row">
+                            <span class="ac-input-icon">
+                                <input type="text" placeholder="Last Name" name="lname" v-model="newUser.lastName" required>
+                                <i class="fa fa-user"></i>
+                            </span>
+                        </div>
+
+                        <div class="ac-registration-form-row">
+                            <label>Are you a manufacturer/retailer</label>
+                            <div class="radio-container">
+                                    <label class="check-box-container">Manufacturer
+                                            <input type="radio" name="radio" v-model="newUser.role" v-bind:value="roles.manufacturer">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                        <label class="check-box-container">Retailer
+                                            <input type="radio" name="radio" v-model="newUser.role" v-bind:value="roles.retailer">
+                                            <span class="checkmark"></span>
+                                    </label>
+                            </div>
+                        </div>
+
+                        <div class="ac-registration-form-row">
+                            <span class="pull-right switch-tab" v-on:click="showSecondTab = !showSecondTab">Next<i class="fa fa-chevron-right" style="font-size:15px;color:#7ac17c"></i></span>
+                        </div>
+                    </div>
+
+
+                    <div v-show="showSecondTab">
+                        <div class="ac-registration-form-row">
+                            <span class="ac-input-icon">
+                                <h4>Organization Information</h4>
+                            </span>
+                        </div>
+                        <div class="ac-registration-form-row">
+                            <span class="ac-input-icon">
+                                <input type="text" placeholder="Name" name="orgName" v-model="newUser.organization.name" required>
+                                <i class="fa fa-users"></i>
+                            </span>
+                        </div>
+
+                        <div class="ac-registration-form-row">
+                            <span class="ac-input-icon">
+                                <input type="text" placeholder="Phone" name="orgPhone" v-model="newUser.organization.phone" required>
+                                <i class="fa fa-phone"></i>
+                            </span>
+                        </div>
+
+                        <div class="ac-registration-form-row">
+                            <span class="ac-input-icon">
+                                <input type="email" placeholder="Mail" name="orgMail" v-model="newUser.organization.email" required>
+                                <i class="fa fa-envelope"></i>
+                            </span>
+                        </div>
+
+                        <div class="ac-registration-form-row">
+                            <span class="ac-input-icon">
+                                <input type="text" placeholder="Address" name="orgAddress" v-model="newUser.organization.address" required>
+                                <i class="fa fa-address-book"></i>
+                            </span>
+                        </div>
+
+                        <div class="ac-registration-form-row">
+                            <span class="ac-input-icon">
+                                <input type="text" placeholder="Website" name="ordWebsite" v-model="newUser.organization.website" required>
+                                <i class="fa fa-address-card"></i>
+                            </span>
+                        </div>
+
+                        <div class="ac-registration-form-row">
+                            <span class="pull-left switch-tab" v-on:click="showSecondTab = !showSecondTab"><i class="fa fa-chevron-left" style="font-size:15px;color:#7ac17c"></i> Back</span>
+                        </div>
+
+                    </div>
+
+
+              <button v-on:click="register">Register</button>
+            </div>
+             <label class="ac-sign-up-label">
+               Come back to <a href="/login.html" class="ac-sign-in">Log in</a>
+            </label> 
+          </div>
+        </div>  
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/vue/dist/vue.js"></script>
+    <script src="bower_components/axios/dist/axios.min.js"></script>
+    <script src="scripts/registration/registration.js"></script>
+</body>
+</html>

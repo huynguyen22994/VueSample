@@ -1,0 +1,114 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgba(0,152,255,0.04);
+}
+div.ac-login-form {
+  border: 5px solid #dcdcdc;
+  position: relative;
+  margin: 5rem auto;
+  max-width: 30rem;
+}
+div.ac-login-form .ac-form-wrapper {
+  background-color: #fff;
+}
+div.ac-login-form .ac-sign-up-label {
+  margin-left: 23%;
+}
+div.ac-login-form .ac-sign-up-label .ac-sign-in {
+  color: #3680c1;
+  font-weight: bold;
+}
+.login-wrapper {
+  padding: 3rem;
+}
+input[type=text],
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+button {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+button:hover {
+  opacity: 0.8;
+}
+.imgcontainer {
+  text-align: center;
+  margin: 0px 0 12px 0;
+  padding-top: 24px;
+}
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+.container {
+  padding: 30px 70px 50px 70px;
+}
+.container .ac-login-form-row .ac-input-icon {
+  display: block;
+  position: relative;
+}
+.container .ac-login-form-row .ac-input-icon input {
+  padding-left: 3rem;
+  padding-right: 0.6rem;
+  font-weight: 500;
+  color: #000;
+}
+.container .ac-login-form-row .ac-input-icon i {
+  bottom: 0;
+  color: #909090;
+  display: inline-block;
+  font-size: 1.4rem;
+  left: 0.6rem;
+  line-height: 4rem;
+  padding: 0 0.3rem;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+
+.loader {
+  display: inline-flex;
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #3498db;
+  width: 20px;
+  height: 20px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

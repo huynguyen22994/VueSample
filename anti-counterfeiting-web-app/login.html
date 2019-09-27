@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="scripts/login/login.css">
+</head>
+<body>
+    <div id="ac-login-app" class="login-wrapper">
+         <div class="ac-login-form">
+          <div class="ac-form-wrapper">
+            <div class="imgcontainer">
+              <img src="assets/logo.png" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+              <div class="ac-login-form-row">
+                <span class="ac-input-icon">
+                    <input type="text" placeholder="User Name" name="uname" v-model="userObj.id" required>
+                    <i class="fa fa-user"></i>
+                </span>
+              </div>
+              <div class="ac-login-form-row">
+                <span class="ac-input-icon">
+                  <input type="password" placeholder="Password" name="psw" v-model="userObj.password" required>
+                  <i class="fa fa-lock"></i>
+                </span>
+              </div>
+                  
+              <button v-on:click="login">Sign in <div v-if="showSpinner" class="loader"></div></button>
+
+              <div class="ac-login-form-row" v-if="isLoginFail">
+                <label style="padding-left: 25%; color: #d65353;font-weight: bold">{{ confirmMsg }}</label>
+              </div>
+
+            </div>
+            <label class="ac-sign-up-label">
+               Don't have account yet? <a href="/registration.html" class="ac-sign-in">Sign up</a>
+            </label>
+          </div>
+        </div> 
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/vue/dist/vue.js"></script>
+    <script src="bower_components/axios/dist/axios.min.js"></script>
+    <script src="scripts/login/login.js"></script>
+</body>
+</html>

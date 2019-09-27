@@ -1,0 +1,159 @@
+body 
+    font-family Arial, Helvetica, sans-serif
+    background-color: rgba(0,152,255,.04)
+
+div.ac-registration-form 
+    border 5px solid #dcdcdc
+    position: relative
+    margin: 0rem auto
+    max-width: 30rem
+    .ac-form-wrapper
+        background-color: #ffff
+    .ac-sign-up-label
+        margin-left: 32%
+        .ac-sign-in
+            color: #3680c1
+            font-weight: bold
+
+.registration-wrapper
+    padding: 1rem 3rem 1rem 3rem
+
+input[type=text], input[type=password], input[type=number], input[type=email] 
+    width 100%
+    padding 12px 20px
+    margin 8px 0
+    display inline-block
+    border 1px solid #ccc
+    box-sizing border-box
+
+
+button 
+    background-color #4CAF50
+    color white
+    padding 10px 20px
+    margin 8px 0
+    border none
+    cursor pointer
+    width 100%
+
+button:hover 
+    opacity: 0.8
+
+
+.imgcontainer 
+    text-align center
+    margin 0px 0 12px 0
+    padding-top: 24px
+
+img.avatar 
+    width 40%
+    border-radius 50%
+
+.container 
+    padding 30px 70px 50px 70px
+    .ac-registration-form-row
+        color #8c9193
+        .ac-input-icon
+            display block
+            position relative
+            input
+                padding-left 3rem
+                padding-right .6rem
+                font-weight 500
+                color #000
+            i
+                bottom 0
+                color #909090
+                display inline-block
+                font-size 1.4rem
+                left .6rem
+                line-height 4rem
+                padding 0 .3rem
+                position absolute
+                top 0
+                z-index 2
+            h4
+                font-weight bold
+
+span.psw 
+    float right;
+    padding-top 16px
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) 
+    span.psw 
+       display block
+       float none
+    
+    .cancelbtn 
+       width 100%
+
+
+.check-box-container 
+    position relative
+    padding-left 35px
+    cursor pointer
+    -webkit-user-select none
+    -moz-user-select none
+    -ms-user-select none
+    user-select none
+    margin-right 70px
+    display initial
+
+
+/* Hide the browser's default radio button */
+.check-box-container input 
+    position absolute
+    opacity 0
+    cursor pointer
+
+
+/* Create a custom radio button */
+.checkmark 
+    position absolute
+    top 1px
+    left 8px
+    height 20px
+    width 20px
+    background-color #c5cbce
+    border-radius 50%
+
+/* On mouse-over, add a grey background color */
+.check-box-container:hover input ~ .checkmark 
+    background-color #ccc
+
+/* When the radio button is checked, add a blue background */
+.check-box-container input:checked ~ .checkmark 
+    background-color #4caf50
+
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after 
+    content ""
+    position absolute
+    display none
+
+/* Show the indicator (dot/circle) when checked */
+.check-box-container input:checked ~ .checkmark:after 
+    display block
+
+/* Style the indicator (dot/circle) */
+.check-box-container .checkmark:after 
+ 	top 9px
+	left 9px
+	width 8px
+	height 8px
+	border-radius 50%
+	background white
+
+.radio-container
+    margin-bottom 10px
+
+.switch-tab
+    color #7ac17c
+    cursor pointer
+    i
+        padding-left 5px
+
+.error-message
+    color #bc6565        
